@@ -24,10 +24,10 @@ print("=== PART 1: VARIABLES ===")
 # Example:
 # name = "Samed"
 
-name = None
-age = None
-height = None
-is_student = None
+name = "yaman"
+age = 21 
+height = 177.4
+is_student = True
 
 # TODO 2:
 # Print all variables in a readable format
@@ -50,7 +50,7 @@ print("=== PART 2: LISTS ===")
 # Create a list called 'data' with at least 6 integer values
 # Example: [10, 20, 30, 40]
 
-data = []
+data = [25,40,50,40,27,23,43]
 
 # TODO 4:
 # Print:
@@ -60,9 +60,9 @@ data = []
 # - Length of list
 
 print("Data:", data)
-# print("First:", ?)
-# print("Last:", ?)
-# print("Length:", ?)
+print("First:", data[0])
+print("Last:", data[-1])
+print("Length:", len(data))
 
 print()
 
@@ -77,32 +77,49 @@ print("=== PART 3: FUNCTIONS ===")
 # Write a function to calculate SUM
 
 def calculate_sum(numbers):
-    # TODO: implement
-    return 0
+    sum_numbers=0
+    for number in numbers :
+        sum_numbers +=number
+        
+    return sum_numbers
 
 
 # TODO 6:
 # Write a function to calculate AVERAGE
 
 def calculate_average(numbers):
-    # TODO: implement (be careful: division by zero)
-    return 0
+    if len(numbers)<=0:
+        return 0
+    total_num=0
+    for num in numbers:
+        total_num+=num
+    avr= total_num/ len(numbers)
+    return avr
 
 
 # TODO 7:
 # Write a function to find MAX value
 
 def find_max(numbers):
+    max_num=numbers[0]
+    for number in numbers:
+        if max_num<=number:
+            max_num=number
+
     # TODO: implement
-    return 0
+    return max_num
 
 
 # TODO 8:
 # Write a function to find MIN value
 
 def find_min(numbers):
+    min_num=numbers[0]
+    for number in numbers:
+        if number <=min_num:
+            min_num=number
     # TODO: implement
-    return 0
+    return min_num
 
 
 # ==========================================================
@@ -115,10 +132,10 @@ print("=== PART 4: DATA ANALYSIS ===")
 # Use your functions to compute:
 # total, average, max, min
 
-total = None
-average = None
-maximum = None
-minimum = None
+total = calculate_sum(data)
+average = calculate_average(data)
+maximum = find_max(data)
+minimum = find_min(data)
 
 # TODO 10:
 # Print results
